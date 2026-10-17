@@ -56,7 +56,7 @@
 
 .aia-foot{border-top:1px solid var(--line);padding:10px 12px 10px}
 .aia-compose{display:flex;align-items:flex-end;gap:6px;background:var(--cloud);border-radius:22px;padding:5px 5px 5px 14px}
-.aia-compose textarea{flex:1;min-width:0;border:0;background:transparent;resize:none;font:inherit;font-size:16px;line-height:1.4;padding:9px 0;max-height:120px;color:var(--ink);outline:none}
+.aia-compose textarea{flex:1;min-width:0;border:0;background:transparent;resize:none;font:inherit;font-size:16px;line-height:1.4;padding:9px 0;max-height:120px;overflow-y:hidden;color:var(--ink);outline:none}
 .aia-compose textarea::placeholder{color:#9E9EA3}
 .aia-send{flex:none;width:38px;height:38px;border-radius:999px;border:0;background:var(--ink);color:var(--white);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,opacity .2s}
 .aia-send:disabled{opacity:.35;cursor:default}
@@ -73,3 +73,5 @@
 .aia-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 @media (prefers-reduced-motion:reduce){.aia-panel,.aia-msg,.aia-card,.aia-launch .aia-live,.aia-cursor,.aia-typing i{animation:none!important}.aia-log{scroll-behavior:auto}}
 @media (max-width:520px){.aia-launch{padding:0 8px}.aia-launch>span:not(.aia-avatar){display:none}}
+
+.aia-errlink{display:inline-block;margin-top:6px;color:#1F5BFF;font-weight:500;text-decoration:none}.aia-errlink:hover{text-decoration:underline}

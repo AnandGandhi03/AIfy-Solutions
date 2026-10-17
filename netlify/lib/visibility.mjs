@@ -1,9 +1,10 @@
 // Free AI visibility check: generate realistic customer questions, ask AI assistants that search the live web,
 // and record whether the business is named, who else is named, and which sources were used.
-const API = "https://api.anthropic.com/v1/messages";
+// Netlify AI Gateway injects ANTHROPIC_BASE_URL (and a key) when no key of your own is set.
+const apiUrl = () => (process.env.ANTHROPIC_BASE_URL || "https://api.anthropic.com").replace(/\/+$/, "") + "/v1/messages";
 
 async function claude(body) {
-  const res = await fetch(API, {
+  const res = await fetch(apiUrl(), {
     method: "POST",
     headers: { "x-api-key": process.env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
     body: JSON.stringify(body),

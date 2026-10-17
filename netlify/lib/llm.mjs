@@ -1,8 +1,9 @@
 // Minimal Anthropic Messages API client: streaming, tool-use loop. No SDK needed.
-const API = "https://api.anthropic.com/v1/messages";
+// Netlify AI Gateway injects ANTHROPIC_BASE_URL (and a key) when no key of your own is set.
+const apiUrl = () => (process.env.ANTHROPIC_BASE_URL || "https://api.anthropic.com").replace(/\/+$/, "") + "/v1/messages";
 
 export async function streamTurn({ system, messages, tools, model, maxTokens = 700, onText }) {
-  const res = await fetch(API, {
+  const res = await fetch(apiUrl(), {
     method: "POST",
     headers: { "x-api-key": process.env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
     body: JSON.stringify({ model, max_tokens: maxTokens, system, tools, messages, stream: true }),

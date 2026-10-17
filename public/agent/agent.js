@@ -99,6 +99,11 @@
   function bubble(kind, text) {
     var d = el("div", "aia-msg " + (kind === "user" ? "aia-user" : kind === "err" ? "aia-bot aia-err" : "aia-bot"));
     if (kind === "bot") d.innerHTML = md(text); else d.textContent = text;
+    if (kind === "err") {
+      var a = el("a", "aia-errlink"); a.href = "/contact"; a.textContent = "Book a call with the team \u2192";
+      a.addEventListener("click", function () { state.open = false; save(); });
+      d.appendChild(el("br")); d.appendChild(a);
+    }
     return d;
   }
   function card(c) {
@@ -168,7 +173,7 @@
   }
 
   // ---- composer ----
-  function fit() { input.style.height = "auto"; input.style.height = Math.min(input.scrollHeight, 120) + "px"; sendBtn.disabled = busy || !input.value.trim(); }
+  function fit() { input.style.height = "auto"; input.style.height = Math.min(input.scrollHeight, 120) + "px"; input.style.overflowY = input.scrollHeight > 120 ? "auto" : "hidden"; sendBtn.disabled = busy || !input.value.trim(); }
   input.addEventListener("input", fit);
   input.addEventListener("keydown", function (e) { if (e.key === "Enter" && !e.shiftKey && !e.isComposing) { e.preventDefault(); form.requestSubmit ? form.requestSubmit() : form.dispatchEvent(new Event("submit")); } });
   form.addEventListener("submit", function (e) { e.preventDefault(); var v = input.value.trim(); if (!v || busy) return; input.value = ""; fit(); ask(v); });
