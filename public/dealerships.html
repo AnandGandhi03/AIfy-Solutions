@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AI voice agent for dealership service | AIfy</title>
+<meta name="description" content="Every service call, answered. AIfy books into your schedule, handles &quot;is my car ready?&quot; and brings back customers who are due. Try the live demo.">
+<link rel="canonical" href="https://aify.solutions/dealerships">
+<meta property="og:type" content="website"><meta property="og:site_name" content="AIfy Solutions">
+<meta property="og:title" content="AI voice agent for dealership service | AIfy"><meta property="og:description" content="Every service call, answered. AIfy books into your schedule, handles &quot;is my car ready?&quot; and brings back customers who are due. Try the live demo.">
+<meta property="og:url" content="https://aify.solutions/dealerships"><meta property="og:image" content="https://aify.solutions/assets/aify-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml"><link rel="icon" href="/assets/favicon-32.png" sizes="32x32"><link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="/agent/agent.css">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#1F5BFF}a:hover{color:#1546D1}
+@keyframes aify-blink{0%,50%{opacity:1}51%,100%{opacity:0}}
+.aify-cursor{animation:aify-blink 1.1s step-end infinite}
+@keyframes aify-wave{0%,100%{transform:scaleY(.25)}50%{transform:scaleY(1)}}
+.aify-bar{display:block;width:4px;border-radius:4px;background:#1F5BFF;transform-origin:center;animation:aify-wave 1.1s ease-in-out infinite}
+@keyframes aify-pulse{0%{box-shadow:0 0 0 0 rgba(31,91,255,.45)}70%{box-shadow:0 0 0 10px rgba(31,91,255,0)}100%{box-shadow:0 0 0 0 rgba(31,91,255,0)}}
+.aify-live{animation:aify-pulse 1.8s ease-out infinite}
+@keyframes aify-seq{0%{opacity:0;transform:translateY(10px) scale(.98)}5%{opacity:1;transform:none}88%{opacity:1;transform:none}96%,100%{opacity:0;transform:translateY(-4px)}}
+.aify-seq{animation:aify-seq 10s cubic-bezier(.2,.8,.2,1) infinite both}
+@keyframes aify-dots{0%,60%,100%{opacity:.25;transform:none}30%{opacity:1;transform:translateY(-3px)}}
+.aify-dot{display:inline-block;width:6px;height:6px;border-radius:99px;background:currentColor;animation:aify-dots 1.2s ease-in-out infinite}
+@keyframes aify-dash{to{stroke-dashoffset:-24}}
+.aify-flowline{stroke-dasharray:4 8;animation:aify-dash .9s linear infinite}
+@keyframes aify-grow{0%{transform:scaleY(.15)}35%,85%{transform:scaleY(1)}100%{transform:scaleY(.15)}}
+.aify-grow{transform-origin:bottom;animation:aify-grow 6s cubic-bezier(.2,.8,.2,1) infinite both}
+@keyframes aify-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.aify-float{animation:aify-float 5s ease-in-out infinite}
+@keyframes aify-drop{0%{opacity:0;transform:translateY(-14px)}12%{opacity:1;transform:none}85%{opacity:1;transform:none}100%{opacity:0;transform:none}}
+.aify-drop{animation:aify-drop 6s cubic-bezier(.2,.8,.2,1) infinite both}
+@keyframes aify-rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.aify-card{transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s cubic-bezier(.2,.8,.2,1)}
+@media (hover:hover){.aify-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px rgba(10,10,10,.22)}}
+@supports (animation-timeline: view()){@media (prefers-reduced-motion: no-preference){.aify-reveal{animation:aify-rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}}}
+@media (max-width:760px){.aify-flow{display:none !important}}
+@media (prefers-reduced-motion: reduce){.aify-cursor,.aify-bar,.aify-live,.aify-seq,.aify-dot,.aify-flowline,.aify-grow,.aify-float,.aify-drop{animation:none !important}.aify-bar{transform:scaleY(.6)}}
+@keyframes aify-fill{0%{transform:scaleX(0)}35%,85%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+
+body{margin:0}
+.aify-links{display:flex}
+.aify-menu{display:none}
+@media (max-width: 760px){.aify-links{display:none}.aify-menu{display:inline-flex}}
+.aify-tab{background:transparent;color:#B4B4B8}.aify-tab[aria-selected="true"]{background:#FFFFFF;color:#0A0A0A}.aify-tab:focus-visible{outline:2px solid #1F5BFF;outline-offset:2px}[hidden]{display:none!important}[hidden]{display:none!important}</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "AIfy Solutions", "url": "https://aify.solutions", "email": "info@aify.solutions", "logo": "https://aify.solutions/assets/aify-logo.svg", "address": {"@type": "PostalAddress", "addressLocality": "Surrey", "addressRegion": "BC", "addressCountry": "CA"}}</script>
+</head>
+<body>
+<div style="width: 100%; background: #FFFFFF; color: #0A0A0A; font-family: 'Geist', sans-serif; font-feature-settings: 'ss05'; -webkit-font-smoothing: antialiased">
+
+
+<header style="width: 100%; background: #FFFFFF; border-bottom: 1px solid #E4E4E1; font-family: 'Geist', sans-serif; font-feature-settings: 'ss05'; color: #0A0A0A">
+<nav aria-label="Main" style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px">
+<a href="/" style="display: flex; align-items: center; text-decoration: none" aria-label="AIfy home">
+<img src="/assets/aify-logo.svg" alt="" style="height: 36px; width: auto; display: block">
+</a>
+<div class="aify-links" style="align-items: center; gap: 28px; font-size: 14px">
+<a href="/demo" style="text-decoration: none; display: inline-flex; align-items: center; gap: 7px; color: #5C5C5C; font-weight: 400"><span class="aify-live" style="width: 7px; height: 7px; border-radius: 999px; background: #1F5BFF"></span>Live demo</a><a href="/dealerships" aria-current="page" style="text-decoration: none; display: inline-flex; align-items: center; gap: 7px; color: #0A0A0A; font-weight: 600">Dealerships</a><a href="/solutions" style="text-decoration: none; display: inline-flex; align-items: center; gap: 7px; color: #5C5C5C; font-weight: 400">Solutions</a><a href="/how-we-work" style="text-decoration: none; display: inline-flex; align-items: center; gap: 7px; color: #5C5C5C; font-weight: 400">How we work</a><a href="/about" style="text-decoration: none; display: inline-flex; align-items: center; gap: 7px; color: #5C5C5C; font-weight: 400">About</a><a href="/blog/" style="text-decoration: none; display: inline-flex; align-items: center; gap: 7px; color: #5C5C5C; font-weight: 400">Blog</a>
+<a href="/contact" style="text-decoration: none; background: #0A0A0A; color: #FFFFFF; padding: 10px 18px; border-radius: 999px; font-weight: 500">Book a demo</a>
+</div>
+<button type="button" class="aify-menu" id="aify-menu-btn" aria-controls="aify-mobile-menu" aria-expanded="false" aria-label="Menu" style="align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid #E4E4E1; border-radius: 999px; background: #FFFFFF; cursor: pointer">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0A0A0A" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16"></path><path d="M4 16h16"></path></svg>
+</button>
+</nav>
+<div id="aify-mobile-menu" hidden style="max-width: 1200px; margin: 0 auto; padding: 8px 24px 24px; display: flex; flex-direction: column; gap: 4px; font-size: 18px">
+<a href="/demo" style="text-decoration: none; color: #0A0A0A; padding: 12px 0; border-bottom: 1px solid #E4E4E1">Live demo</a><a href="/dealerships" style="text-decoration: none; color: #0A0A0A; padding: 12px 0; border-bottom: 1px solid #E4E4E1">Dealerships</a><a href="/solutions" style="text-decoration: none; color: #0A0A0A; padding: 12px 0; border-bottom: 1px solid #E4E4E1">Solutions</a><a href="/how-we-work" style="text-decoration: none; color: #0A0A0A; padding: 12px 0; border-bottom: 1px solid #E4E4E1">How we work</a><a href="/about" style="text-decoration: none; color: #0A0A0A; padding: 12px 0; border-bottom: 1px solid #E4E4E1">About</a><a href="/blog/" style="text-decoration: none; color: #0A0A0A; padding: 12px 0; border-bottom: 1px solid #E4E4E1">Blog</a>
+<a href="/contact" style="margin-top: 12px; text-decoration: none; background: #0A0A0A; color: #FFFFFF; padding: 14px 20px; border-radius: 999px; font-weight: 500; text-align: center">Book a demo</a>
+</div>
+</header>
+
+
+<section style="max-width: 1200px; margin: 0 auto; padding: 96px 24px 56px; display: flex; flex-direction: column; gap: 24px">
+<span style="font-size: 16px; color: #5C5C5C">AIfy for dealerships</span>
+<h1 style="margin: 0; font-size: clamp(44px, 6.4vw, 88px); line-height: 1.0; font-weight: 600; letter-spacing: -0.045em; max-width: 920px">Every service call, answered.</h1>
+<p style="margin: 0; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: #5C5C5C; max-width: 680px">A missed service call is a missed repair order. AIfy answers every one, books into your schedule and follows up on the work that walked out the door, so your advisors can focus on the customers in front of them.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
+<a href="/contact" style="text-decoration: none; background: #0A0A0A; color: #FFFFFF; padding: 15px 26px; border-radius: 999px; font-size: 16px; font-weight: 500">Book a dealership demo</a>
+<a href="/demo" style="text-decoration: none; display: inline-flex; align-items: center; gap: 10px; color: #0A0A0A; padding: 15px 22px; border-radius: 999px; font-size: 16px; font-weight: 500; border: 1px solid #E4E4E1"><span class="aify-live" style="width: 8px; height: 8px; border-radius: 999px; background: #1F5BFF"></span>Call the live demo</a>
+</div>
+</section>
+
+<section class="aify-reveal" id="demo" style="max-width: 1200px; margin: 0 auto; padding: 24px 24px 112px">
+<div style="background: #0A0A0A; color: #FFFFFF; border-radius: 32px; padding: clamp(20px, 3.4vw, 44px); display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px">
+<div role="tablist" aria-label="Demo calls" style="display: flex; flex-wrap: wrap; gap: 6px; background: #19191B; padding: 5px; border-radius: 999px">
+<button type="button" role="tab" id="demo-tab-0" aria-controls="demo-panel-0" aria-selected="true" data-demo-tab="0" class="aify-tab" style="border: 0; cursor: pointer; padding: 10px 18px; border-radius: 999px; font: inherit; font-size: 14px; font-weight: 500; min-height: 40px">Service booking</button><button type="button" role="tab" id="demo-tab-1" aria-controls="demo-panel-1" aria-selected="false" data-demo-tab="1" class="aify-tab" style="border: 0; cursor: pointer; padding: 10px 18px; border-radius: 999px; font: inherit; font-size: 14px; font-weight: 500; min-height: 40px">Recall outreach</button><button type="button" role="tab" id="demo-tab-2" aria-controls="demo-panel-2" aria-selected="false" data-demo-tab="2" class="aify-tab" style="border: 0; cursor: pointer; padding: 10px 18px; border-radius: 999px; font: inherit; font-size: 14px; font-weight: 500; min-height: 40px">Is my car ready?</button>
+</div>
+<span style="font-size: 13px; color: #9E9EA3">Demo · Harbour Lane Motors, a sample store</span>
+</div>
+<div role="tabpanel" id="demo-panel-0" aria-labelledby="demo-tab-0" data-demo-panel="0"><div style="display: flex; flex-wrap: wrap; gap: 24px">
+<div style="flex: 999 1 520px; min-width: 0; background: #141416; border: 1px solid #232326; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="width: 40px; height: 40px; border-radius: 999px; background: #232326; display: inline-flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 500">Inbound call · 7:42 PM</span><span style="font-family: 'Geist Mono', monospace; font-size: 13px; color: #9E9EA3">(604) 555-0143</span></span>
+<span style="margin-left: auto; display: inline-flex; align-items: center; gap: 14px"><span aria-hidden="true" style="height: 32px; display: inline-flex; align-items: center; gap: 3px"><span class="aify-bar" style="width: 3px; height: 10px; animation-delay: -0.1s"></span><span class="aify-bar" style="width: 3px; height: 18px; animation-delay: -0.5s"></span><span class="aify-bar" style="width: 3px; height: 26px; animation-delay: -0.2s"></span><span class="aify-bar" style="width: 3px; height: 14px; animation-delay: -0.8s"></span><span class="aify-bar" style="width: 3px; height: 22px; animation-delay: -0.35s"></span><span class="aify-bar" style="width: 3px; height: 30px; animation-delay: -0.6s"></span><span class="aify-bar" style="width: 3px; height: 16px; animation-delay: -0.15s"></span><span class="aify-bar" style="width: 3px; height: 24px; animation-delay: -0.9s"></span><span class="aify-bar" style="width: 3px; height: 12px; animation-delay: -0.45s"></span><span class="aify-bar" style="width: 3px; height: 20px; animation-delay: -0.7s"></span><span class="aify-bar" style="width: 3px; height: 28px; animation-delay: -0.25s"></span><span class="aify-bar" style="width: 3px; height: 14px; animation-delay: -0.55s"></span></span><span class="aify-live" style="width: 8px; height: 8px; border-radius: 999px; background: #1F5BFF"></span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5">
+
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px">
+<span style="font-size: 12px; color: #9E9EA3">Customer</span>
+<span style="max-width: 84%; background: #232326; padding: 12px 16px; border-radius: 18px 18px 18px 6px">Hi, I need to book the 8,000 km service on my 2022 RAV4 this week.</span>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px">
+<span style="font-size: 12px; color: #9E9EA3">AIfy</span>
+<span style="max-width: 84%; background: #FFFFFF; color: #0A0A0A; padding: 12px 16px; border-radius: 18px 18px 6px 18px">Happy to help. I have Thursday at 9:00 AM or Friday at 2:30 PM. Will you wait or drop it off?</span>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px">
+<span style="font-size: 12px; color: #9E9EA3">Customer</span>
+<span style="max-width: 84%; background: #232326; padding: 12px 16px; border-radius: 18px 18px 18px 6px">Thursday at 9. I&#x27;ll wait.</span>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px">
+<span style="font-size: 12px; color: #9E9EA3">AIfy</span>
+<span style="max-width: 84%; background: #FFFFFF; color: #0A0A0A; padding: 12px 16px; border-radius: 18px 18px 6px 18px">You&#x27;re booked. I also checked your VIN and there are no open recalls. A confirmation text is on its way.</span>
+</div>
+
+</div>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #FFFFFF; color: #0A0A0A; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600"><span style="width: 22px; height: 22px; border-radius: 999px; background: #1F5BFF; display: inline-flex; align-items: center; justify-content: center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Appointment booked</span>
+<div style="display: flex; flex-direction: column">
+
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid #E4E4E1; font-size: 15px"><span style="color: #5C5C5C">Vehicle</span><span style="font-weight: 500; text-align: right">2022 Toyota RAV4</span></div>
+
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid #E4E4E1; font-size: 15px"><span style="color: #5C5C5C">Service</span><span style="font-weight: 500; text-align: right">8,000 km maintenance</span></div>
+
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid #E4E4E1; font-size: 15px"><span style="color: #5C5C5C">When</span><span style="font-weight: 500; text-align: right">Thu, 9:00 AM · waiting</span></div>
+
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid #E4E4E1; font-size: 15px"><span style="color: #5C5C5C">Open recalls</span><span style="font-weight: 500; text-align: right">None</span></div>
+
+</div>
+<span style="font-size: 13px; color: #5C5C5C">Sent to the service schedule and the advisor&#x27;s queue.</span>
+</div>
+<div style="background: #141416; border: 1px solid #232326; border-radius: 24px; padding: 22px 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 15px; font-weight: 500">What your team sees</span>
+<span style="font-size: 15px; line-height: 1.5; color: #B4B4B8">A summary, the recording and the next step, in the tools your advisors already use. Anything unclear is handed to a person, not guessed.</span>
+</div>
+</div>
+</div></div><div role="tabpanel" id="demo-panel-1" aria-labelledby="demo-tab-1" data-demo-panel="1" hidden><div style="display: flex; flex-wrap: wrap; gap: 24px">
+<div style="flex: 999 1 520px; min-width: 0; background: #141416; border: 1px solid #232326; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="width: 40px; height: 40px; border-radius: 999px; background: #232326; display: inline-flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 500">Outbound call · 10:05 AM</span><span style="font-family: 'Geist Mono', monospace; font-size: 13px; color: #9E9EA3">(778) 555-0199</span></span>
+<span style="margin-left: auto; display: inline-flex; align-items: center; gap: 14px"><span aria-hidden="true" style="height: 32px; display: inline-flex; align-items: center; gap: 3px"><span class="aify-bar" style="width: 3px; height: 10px; animation-delay: -0.1s"></span><span class="aify-bar" style="width: 3px; height: 18px; animation-delay: -0.5s"></span><span class="aify-bar" style="width: 3px; height: 26px; animation-delay: -0.2s"></span><span class="aify-bar" style="width: 3px; height: 14px; animation-delay: -0.8s"></span><span class="aify-bar" style="width: 3px; height: 22px; animation-delay: -0.35s"></span><span class="aify-bar" style="width: 3px; height: 30px; animation-delay: -0.6s"></span><span class="aify-bar" style="width: 3px; height: 16px; animation-delay: -0.15s"></span><span class="aify-bar" style="width: 3px; height: 24px; animation-delay: -0.9s"></span><span class="aify-bar" style="width: 3px; height: 12px; animation-delay: -0.45s"></span><span class="aify-bar" style="width: 3px; height: 20px; animation-delay: -0.7s"></span><span class="aify-bar" style="width: 3px; height: 28px; animation-delay: -0.25s"></span><span class="aify-bar" style="width: 3px; height: 14px; animation-delay: -0.55s"></span></span><span class="aify-live" style="width: 8px; height: 8px; border-radius: 999px; background: #1F5BFF"></span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5">
+
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px">
+<span style="font-size: 12px; color: #9E9EA3">AIfy</span>
+<span style="max-width: 84%; background: #FFFFFF; color: #0A0A0A; padding: 12px 16px; border-radius: 18px 18px 6px 18px">Hi Maria, it&#x27;s Harbour Lane Motors. Your 2020 CR-V has an open recall on the fuel pump. The fix is free and takes about two hours. Would you like me to book it?</span>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px">
+<span style="font-size: 12px; color: #9E9EA3">Customer</span>
+<span style="max-width: 84%; background: #232326; padding: 12px 16px; border-radius: 18px 18px 18px 6px">Oh, yes please. Mornings are best.</span>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px">
+<span style="font-size: 12px; color: #9E9EA3">AIfy</span>
+<span style="max-width: 84%; background: #FFFFFF; color: #0A0A0A; padding: 12px 16px; border-radius: 18px 18px 6px 18px">Monday at 8:00 AM is open, and we can have a loaner ready. Shall I hold it?</span>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px">
+<span style="font-size: 12px; color: #9E9EA3">Customer</span>
+<span style="max-width: 84%; background: #232326; padding: 12px 16px; border-radius: 18px 18px 18px 6px">Perfect, book it.</span>
+</div>
+
+</div>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #FFFFFF; color: #0A0A0A; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600"><span style="width: 22px; height: 22px; border-radius: 999px; background: #1F5BFF; display: inline-flex; align-items: center; justify-content: center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Recall visit booked</span>
+<div style="display: flex; flex-direction: column">
+
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid #E4E4E1; font-size: 15px"><span style="color: #5C5C5C">Vehicle</span><span style="font-weight: 500; text-align: right">2020 Honda CR-V</span></div>
+
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid #E4E4E1; font-size: 15px"><span style="color: #5C5C5C">Campaign</span><span style="font-weight: 500; text-align: right">Fuel pump recall</span></div>
+
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid #E4E4E1; font-size: 15px"><span style="color: #5C5C5C">When</span><span style="font-weight: 500; text-align: right">Mon, 8:00 AM · loaner</span></div>
+
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid #E4E4E1; font-size: 15px"><span style="color: #5C5C5C">Cost to customer</span><span style="font-weight: 500; text-align: right">$0</span></div>
+
+</div>
+<span style="font-size: 13px; color: #5C5C5C">Logged on the customer record with the call recording.</span>
+</div>
+<div style="background: #141416; border: 1px solid #232326; border-radius: 24px; padding: 22px 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 15px; font-weight: 500">What your team sees</span>
+<span style="font-size: 15px; line-height: 1.5; color: #B4B4B8">A summary, the recording and the next step, in the tools your advisors already use. Anything unclear is handed to a person, not guessed.</span>
+</div>
+</div>
+</div></div><div role="tabpanel" id="demo-panel-2" aria-labelledby="demo-tab-2" data-demo-panel="2" hidden><div style="display: flex; flex-wrap: wrap; gap: 24px">
+<div style="flex: 999 1 520px; min-width: 0; background: #141416; border: 1px solid #232326; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="width: 40px; height: 40px; border-radius: 999px; background: #232326; display: inline-flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 500">Inbound call · 3:52 PM</span><span style="font-family: 'Geist Mono', monospace; font-size: 13px; color: #9E9EA3">(236) 555-0108</span></span>
+<span style="margin-left: auto; display: inline-flex; align-items: center; gap: 14px"><span aria-hidden="true" style="height: 32px; display: inline-flex; align-items: center; gap: 3px"><span class="aify-bar" style="width: 3px; height: 10px; animation-delay: -0.1s"></span><span class="aify-bar" style="width: 3px; height: 18px; animation-delay: -0.5s"></span><span class="aify-bar" style="width: 3px; height: 26px; animation-delay: -0.2s"></span><span class="aify-bar" style="width: 3px; height: 14px; animation-delay: -0.8s"></span><span class="aify-bar" style="width: 3px; height: 22px; animation-delay: -0.35s"></span><span class="aify-bar" style="width: 3px; height: 30px; animation-delay: -0.6s"></span><span class="aify-bar" style="width: 3px; height: 16px; animation-delay: -0.15s"></span><span class="aify-bar" style="width: 3px; height: 24px; animation-delay: -0.9s"></span><span class="aify-bar" style="width: 3px; height: 12px; animation-delay: -0.45s"></span><span class="aify-bar" style="width: 3px; height: 20px; animation-delay: -0.7s"></span><span class="aify-bar" style="width: 3px; height: 28px; animation-delay: -0.25s"></span><span class="aify-bar" style="width: 3px; height: 14px; animation-delay: -0.55s"></span></span><span class="aify-live" style="width: 8px; height: 8px; border-radius: 999px; background: #1F5BFF"></span></span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 10px; font-size: 16px; line-height: 1.5">
+
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px">
+<span style="font-size: 12px; color: #9E9EA3">Customer</span>
+<span style="max-width: 84%; background: #232326; padding: 12px 16px; border-radius: 18px 18px 18px 6px">Hi, just checking whether my F-150 is done.</span>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px">
+<span style="font-size: 12px; color: #9E9EA3">AIfy</span>
+<span style="max-width: 84%; background: #FFFFFF; color: #0A0A0A; padding: 12px 16px; border-radius: 18px 18px 6px 18px">Let me look. Your advisor marked it ready at 3:40 PM. The total is $412.60 and we&#x27;re open until 6:00.</span>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 4px">
+<span style="font-size: 12px; color: #9E9EA3">Customer</span>
+<span style="max-width: 84%; background: #232326; padding: 12px 16px; border-radius: 18px 18px 18px 6px">Great. Can I pay when I pick it up?</span>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 4px">
+<span style="font-size: 12px; color: #9E9EA3">AIfy</span>
+<span style="max-width: 84%; background: #FFFFFF; color: #0A0A0A; padding: 12px 16px; border-radius: 18px 18px 6px 18px">Yes. I&#x27;ve let your advisor know you&#x27;re on the way.</span>
+</div>
+
+</div>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #FFFFFF; color: #0A0A0A; border-radius: 24px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600"><span style="width: 22px; height: 22px; border-radius: 999px; background: #1F5BFF; display: inline-flex; align-items: center; justify-content: center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Status call resolved</span>
+<div style="display: flex; flex-direction: column">
+
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid #E4E4E1; font-size: 15px"><span style="color: #5C5C5C">Vehicle</span><span style="font-weight: 500; text-align: right">2019 Ford F-150</span></div>
+
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid #E4E4E1; font-size: 15px"><span style="color: #5C5C5C">Status</span><span style="font-weight: 500; text-align: right">Ready for pickup</span></div>
+
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid #E4E4E1; font-size: 15px"><span style="color: #5C5C5C">Advisor</span><span style="font-weight: 500; text-align: right">Notified</span></div>
+
+<div style="display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid #E4E4E1; font-size: 15px"><span style="color: #5C5C5C">Advisor time needed</span><span style="font-weight: 500; text-align: right">None</span></div>
+
+</div>
+<span style="font-size: 13px; color: #5C5C5C">No one on the drive had to stop and look it up.</span>
+</div>
+<div style="background: #141416; border: 1px solid #232326; border-radius: 24px; padding: 22px 24px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 15px; font-weight: 500">What your team sees</span>
+<span style="font-size: 15px; line-height: 1.5; color: #B4B4B8">A summary, the recording and the next step, in the tools your advisors already use. Anything unclear is handed to a person, not guessed.</span>
+</div>
+</div>
+</div></div>
+</div>
+</section>
+
+<section class="aify-reveal" style="max-width: 1200px; margin: 0 auto; padding: 0 24px 112px; display: flex; flex-direction: column; gap: 40px">
+<h2 style="margin: 0; font-size: clamp(32px, 4vw, 52px); line-height: 1.05; font-weight: 600; letter-spacing: -0.04em; max-width: 760px">Three jobs, off your advisors' plates.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px">
+<div class="aify-card" style="background: #F5F5F3; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F5BFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em">Answer every service call</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #5C5C5C">Lunch rush, overflow and after hours. Books by your rules for time, bay and advisor, and transfers to a person when the caller needs one.</p>
+</div>
+<div class="aify-card" style="background: #F5F5F3; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F5BFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"></path><polyline points="21 3 21 9 15 9"></polyline></svg></span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em">Bring customers back</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #5C5C5C">Due-for-service reminders, declined-work follow-ups, missed appointments and open-recall outreach, by call or text.</p>
+</div>
+<div class="aify-card" style="background: #F5F5F3; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<span style="width: 48px; height: 48px; border-radius: 14px; background: #FFFFFF; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 8px"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F5BFF" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17h14l-1.5-6.5A2 2 0 0 0 15.6 9H8.4a2 2 0 0 0-1.9 1.5z"></path><circle cx="7.5" cy="17.5" r="1.8"></circle><circle cx="16.5" cy="17.5" r="1.8"></circle><polyline points="9 5 11 7 15 3"></polyline></svg></span>
+<h3 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em">"Is my car ready?" handled</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #5C5C5C">Status calls answered from the repair order, so advisors stay on the drive instead of on hold.</p>
+</div>
+</div>
+</section>
+
+<section class="aify-reveal" style="background: #0A0A0A; color: #FFFFFF">
+<div style="max-width: 1200px; margin: 0 auto; padding: 112px 24px; display: flex; flex-wrap: wrap; gap: 16px">
+<div style="flex: 999 1 520px; min-width: 0; background: #141416; border: 1px solid #232326; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 20px">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 12px"><h3 style="margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.02em">Ask your service department anything</h3><span style="font-size: 13px; color: #9E9EA3">Demo</span></div>
+<span style="align-self: flex-end; max-width: 86%; background: #FFFFFF; color: #0A0A0A; padding: 12px 16px; border-radius: 18px 18px 6px 18px; font-size: 16px">Which customers called more than three times this week?</span>
+<div style="display: flex; flex-direction: column; background: #19191B; border-radius: 16px; padding: 6px 18px; font-size: 15px">
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px minmax(0, 1.4fr); gap: 12px; padding: 12px 0; color: #9E9EA3; font-size: 13px"><span>Customer</span><span>Calls</span><span>Reason</span></div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px minmax(0, 1.4fr); gap: 12px; padding: 12px 0; border-top: 1px solid #232326"><span>J. Juarez</span><span style="font-family: 'Geist Mono', monospace">5</span><span style="color: #B4B4B8">Status on 2024 Corolla</span></div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px minmax(0, 1.4fr); gap: 12px; padding: 12px 0; border-top: 1px solid #232326"><span>K. Tello</span><span style="font-family: 'Geist Mono', monospace">4</span><span style="color: #B4B4B8">Approval on brake quote</span></div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) 80px minmax(0, 1.4fr); gap: 12px; padding: 12px 0; border-top: 1px solid #232326"><span>D. Ortiz</span><span style="font-family: 'Geist Mono', monospace">4</span><span style="color: #B4B4B8">Part back in stock?</span></div>
+</div>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; background: #FFFFFF; color: #0A0A0A; border-radius: 24px; padding: 32px; display: flex; flex-direction: column; gap: 14px">
+<h3 style="margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -0.02em">Made by people who know the drive</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.55; color: #5C5C5C">Our team has worked in product and support on dealership service software, so the agent is built around how service departments actually run.</p>
+</div>
+</div>
+</section>
+
+<section class="aify-reveal" style="max-width: 1200px; margin: 0 auto; padding: 112px 24px; display: flex; flex-direction: column; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 720px">
+<h2 style="margin: 0; font-size: clamp(32px, 4vw, 52px); line-height: 1.05; font-weight: 600; letter-spacing: -0.04em">Start small. Expand when it earns it.</h2>
+<p style="margin: 0; font-size: 18px; line-height: 1.55; color: #5C5C5C">Integrations with your scheduler, CRM and DMS are scoped store by store, so we begin with what your systems allow.</p>
+</div>
+<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px">
+<li style="border: 1px solid #E4E4E1; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><span style="height: 4px; border-radius: 4px; background: #F5F5F3; overflow: hidden; margin-bottom: 10px"><span class="aify-grow" style="display: block; width: 33%; height: 100%; background: #1F5BFF; transform-origin: left; animation-name: aify-fill; animation-delay: 0.0s"></span></span><span style="font-size: 15px; color: #5C5C5C">Step 1</span><h3 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">After-hours calls</h3><p style="margin: 0; font-size: 16px; line-height: 1.55; color: #5C5C5C">Start with the calls nobody is answering today. Low risk, easy to measure.</p></li>
+<li style="border: 1px solid #E4E4E1; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><span style="height: 4px; border-radius: 4px; background: #F5F5F3; overflow: hidden; margin-bottom: 10px"><span class="aify-grow" style="display: block; width: 66%; height: 100%; background: #1F5BFF; transform-origin: left; animation-name: aify-fill; animation-delay: 0.25s"></span></span><span style="font-size: 15px; color: #5C5C5C">Step 2</span><h3 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Overflow and lunch rush</h3><p style="margin: 0; font-size: 16px; line-height: 1.55; color: #5C5C5C">Add daytime overflow once your team trusts how it books and hands off.</p></li>
+<li style="border: 1px solid #E4E4E1; border-radius: 24px; padding: 28px; display: flex; flex-direction: column; gap: 10px"><span style="height: 4px; border-radius: 4px; background: #F5F5F3; overflow: hidden; margin-bottom: 10px"><span class="aify-grow" style="display: block; width: 100%; height: 100%; background: #1F5BFF; transform-origin: left; animation-name: aify-fill; animation-delay: 0.5s"></span></span><span style="font-size: 15px; color: #5C5C5C">Step 3</span><h3 style="margin: 0; font-size: 21px; font-weight: 600; letter-spacing: -0.02em">Outreach</h3><p style="margin: 0; font-size: 16px; line-height: 1.55; color: #5C5C5C">Turn on reminders, recalls and declined-work follow-ups to bring customers back.</p></li>
+</ol>
+</section>
+
+<section class="aify-reveal" style="background: #F5F5F3">
+<div style="max-width: 1200px; margin: 0 auto; padding: 112px 24px; display: flex; flex-wrap: wrap; gap: 48px">
+<h2 style="flex: 1 1 300px; margin: 0; font-size: clamp(32px, 4vw, 48px); line-height: 1.05; font-weight: 600; letter-spacing: -0.04em">Questions dealers ask</h2>
+<div style="flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column">
+<div style="padding: 22px 0; border-top: 1px solid #E4E4E1; display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 19px; font-weight: 600">Does it work with our scheduler and DMS?</h3><p style="margin: 0; font-size: 16px; line-height: 1.55; color: #5C5C5C">We check your systems on the first call. Where direct booking is possible we connect to it; where it isn't, the agent captures the request and your team confirms.</p></div>
+<div style="padding: 22px 0; border-top: 1px solid #E4E4E1; display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 19px; font-weight: 600">What if a caller wants a person?</h3><p style="margin: 0; font-size: 16px; line-height: 1.55; color: #5C5C5C">It transfers them, or takes a message for the right advisor when nobody is in. Anything it's unsure about goes to a person.</p></div>
+<div style="padding: 22px 0; border-top: 1px solid #E4E4E1; display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 19px; font-weight: 600">Can we control what it says?</h3><p style="margin: 0; font-size: 16px; line-height: 1.55; color: #5C5C5C">Yes. You approve the greeting, the booking rules, the hours it works and the topics it won't discuss.</p></div>
+<div style="padding: 22px 0; border-top: 1px solid #E4E4E1; border-bottom: 1px solid #E4E4E1; display: flex; flex-direction: column; gap: 8px"><h3 style="margin: 0; font-size: 19px; font-weight: 600">How long does it take to go live?</h3><p style="margin: 0; font-size: 16px; line-height: 1.55; color: #5C5C5C">An after-hours pilot is the quickest start. The timeline depends on which integrations your store has enabled.</p></div>
+</div>
+</div>
+</section>
+
+<section class="aify-reveal" style="background: #0A0A0A; color: #FFFFFF">
+<div style="max-width: 1200px; margin: 0 auto; padding: 112px 24px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px">
+<h2 style="margin: 0; font-size: clamp(36px, 5vw, 64px); line-height: 1.04; font-weight: 600; letter-spacing: -0.04em; max-width: 820px">Hear it answer a call from your store.</h2>
+<a href="/contact" style="text-decoration: none; background: #FFFFFF; color: #0A0A0A; padding: 16px 28px; border-radius: 999px; font-size: 16px; font-weight: 600">Book a dealership demo</a>
+</div>
+</section>
+
+
+
+<footer style="width: 100%; background: #FFFFFF; border-top: 1px solid #E4E4E1; font-family: 'Geist', sans-serif; font-feature-settings: 'ss05'; color: #5C5C5C; font-size: 14px">
+<div style="max-width: 1200px; margin: 0 auto; padding: 56px 24px 64px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 14px; max-width: 320px">
+<a href="/" aria-label="AIfy home" style="display: flex"><img src="/assets/aify-logo.svg" alt="" style="height: 30px; width: auto; display: block"></a>
+<span style="line-height: 1.5">Custom AI products and automation for businesses everywhere. Built in Surrey, BC.</span>
+<a href="mailto:info@aify.solutions" style="color: #0A0A0A">info@aify.solutions</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 56px">
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="color: #0A0A0A; font-weight: 500">Solutions</span>
+<a href="/demo" style="text-decoration: none; color: #5C5C5C">Live demo</a>
+<a href="/dealerships" style="text-decoration: none; color: #5C5C5C">Dealerships</a>
+<a href="/solutions#receptionist" style="text-decoration: none; color: #5C5C5C">AI receptionists</a>
+<a href="/solutions#automation" style="text-decoration: none; color: #5C5C5C">Workflow automation</a>
+<a href="/solutions#geo" style="text-decoration: none; color: #5C5C5C">GEO / AEO and local SEO</a>
+<a href="/ai-visibility" style="text-decoration: none; color: #5C5C5C">Free AI visibility check</a>
+<a href="/solutions#websites" style="text-decoration: none; color: #5C5C5C">Websites and analytics</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="color: #0A0A0A; font-weight: 500">Company</span>
+<a href="/about" style="text-decoration: none; color: #5C5C5C">About</a>
+<a href="/how-we-work" style="text-decoration: none; color: #5C5C5C">How we work</a>
+<a href="/blog/" style="text-decoration: none; color: #5C5C5C">Blog</a>
+<a href="/contact" style="text-decoration: none; color: #5C5C5C">Contact</a></div>
+<div style="display: flex; flex-direction: column; gap: 10px"><span style="color: #0A0A0A; font-weight: 500">Legal</span>
+<a href="/privacy" style="text-decoration: none; color: #5C5C5C">Privacy</a>
+<a href="/terms" style="text-decoration: none; color: #5C5C5C">Terms</a></div>
+</div>
+<span style="flex-basis: 100%; border-top: 1px solid #E4E4E1; padding-top: 24px">© 2026 AIfy Solutions. All rights reserved.</span>
+</div>
+</footer>
+
+</div>
+<script src="/assets/site.js" defer></script>
+<script src="/agent/agent.js" defer data-endpoint="/api/agent"></script>
+</body>
+</html>

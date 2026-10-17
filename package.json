@@ -1,0 +1,12 @@
+{
+  "name": "aify-website",
+  "private": true,
+  "type": "module",
+  "description": "AIfy Solutions website with the live AI agent (Netlify)",
+  "scripts": {
+    "dev": "netlify dev"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^10.0.0"
+  }
+}

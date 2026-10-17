@@ -1,0 +1,29 @@
+# AIfy Solutions
+
+> AIfy Solutions is a company in Surrey, BC, Canada that designs and builds custom AI and automation for businesses anywhere: AI chatbots and receptionists, AI voice agents for dealership service departments, workflow automation, GEO / AEO (generative and answer engine optimisation, including a free AI visibility check at https://aify.solutions/ai-visibility), website development, AI analytics and local SEO. Contact: info@aify.solutions.
+
+## Pages
+
+- [AIfy Solutions](https://aify.solutions/): AIfy designs and builds AI that answers your phones, follows up with customers and gets you found. Try our live AI service desk demo.
+- [Live demo: AI service desk for dealerships](https://aify.solutions/demo): Call our AI service desk from your browser and watch it answer, book, text the customer and brief the advisor, live.
+- [Free AI visibility check: does AI recommend your business?](https://aify.solutions/ai-visibility): Free GEO / AEO check: see whether AI assistants with live web search name your business when customers ask, who they recommend instead, and what to fix.
+- [AI voice agent for dealership service](https://aify.solutions/dealerships): Every service call, answered. AIfy books into your schedule, handles "is my car ready?" and brings back customers who are due. Try the live demo.
+- [Solutions](https://aify.solutions/solutions): AI chatbot and receptionist, workflow automation, GEO, website development, AI analytics and local SEO, built around your business.
+- [How we work](https://aify.solutions/how-we-work): From first call to live in weeks: discovery, a fixed-price proposal, build and test, then launch and improve.
+- [About](https://aify.solutions/about): AIfy Solutions is a product-led team in Surrey, BC that designs and builds AI around how businesses actually run.
+- [Book a demo](https://aify.solutions/contact): Book a 15-minute call and hear a live demo built around your business.
+
+## Articles
+
+- [What is GEO (or AEO)? How to get your business recommended by ChatGPT, Perplexity and Gemini](https://aify.solutions/blog/what-is-geo/): GEO and AEO explained in plain English, with a practical checklist to help AI assistants find, trust and recommend your business.
+- [What missed service calls cost a dealership, and how to answer every one](https://aify.solutions/blog/dealership-missed-service-calls/): A simple way to work out what unanswered service calls cost your store, why they happen, and a step-by-step plan to answer every call without adding headcount.
+- [AI receptionist vs human receptionist, an honest comparison for small businesses](https://aify.solutions/blog/ai-receptionist-vs-human-receptionist/): Where an AI receptionist beats a person, where a person still wins, and how most small businesses end up using both. A practical comparison without the hype.
+- [The 5 business processes to automate first, and the order that matters](https://aify.solutions/blog/business-processes-to-automate-first/): Which business processes to automate first, how to pick them, and how to avoid automating a mess. A practical guide for small and mid-sized businesses.
+- [Google Business Profile and local search, what to fix first](https://aify.solutions/blog/google-business-profile-local-search/): A prioritised checklist for your Google Business Profile and local search, from categories and hours to reviews and service pages, written for busy owners.
+- [How to design an AI phone or chat agent customers actually like](https://aify.solutions/blog/ai-agent-script-framework/): The conversation design framework we use for AI receptionists and chat agents, from greeting to hand-off, with examples you can adapt.
+- [7 metrics to track once AI is answering your phones and website](https://aify.solutions/blog/ai-metrics-to-track/): The seven numbers that show whether your AI receptionist, chat agent or GEO work is paying off, and how to track them without a data team.
+
+## Legal
+
+- [Privacy policy](https://aify.solutions/privacy)
+- [Terms of use](https://aify.solutions/terms)
