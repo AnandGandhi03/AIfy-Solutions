@@ -46,7 +46,10 @@ export function sseResponse(origin, run) {
       try { await run(send); send({ type: "done" }); }
       catch (err) {
         console.error("stream error", err);
-        send({ type: "error", message: "Sorry, something went wrong on our side. Please try again, or email info@aify.solutions." });
+        const m = String((err && err.message) || "");
+        const code = (m.match(/anthropic (\d{3})/) || [])[1];
+        const why = /credit|billing/i.test(m) ? "billing" : /model/i.test(m) ? "model" : /web_search|tool/i.test(m) ? "tool" : "";
+        send({ type: "error", code: code ? `ai_${code}${why ? "_" + why : ""}` : "server", message: "Sorry, something went wrong on our side. Please try again, or email info@aify.solutions." + (code ? ` (ref ${code}${why ? "-" + why : ""})` : "") });
       } finally { controller.close(); }
     },
   });
