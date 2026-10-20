@@ -90,6 +90,18 @@ body{margin:0}
 <span aria-hidden="true" style="margin-left: auto; height: 32px; display: inline-flex; align-items: center; gap: 3px"><span class="aify-bar" style="width: 3px; height: 10px; animation-delay: -0.1s"></span><span class="aify-bar" style="width: 3px; height: 18px; animation-delay: -0.5s"></span><span class="aify-bar" style="width: 3px; height: 26px; animation-delay: -0.2s"></span><span class="aify-bar" style="width: 3px; height: 14px; animation-delay: -0.8s"></span><span class="aify-bar" style="width: 3px; height: 22px; animation-delay: -0.35s"></span><span class="aify-bar" style="width: 3px; height: 30px; animation-delay: -0.6s"></span><span class="aify-bar" style="width: 3px; height: 16px; animation-delay: -0.15s"></span><span class="aify-bar" style="width: 3px; height: 24px; animation-delay: -0.9s"></span><span class="aify-bar" style="width: 3px; height: 12px; animation-delay: -0.45s"></span><span class="aify-bar" style="width: 3px; height: 20px; animation-delay: -0.7s"></span><span class="aify-bar" style="width: 3px; height: 28px; animation-delay: -0.25s"></span><span class="aify-bar" style="width: 3px; height: 14px; animation-delay: -0.55s"></span></span>
 </div>
 <a href="https://calendly.com/aify-solutions/aify-meeting" target="_blank" rel="noopener" style="align-self: flex-start; margin-top: 8px; display: inline-flex; align-items: center; gap: 10px; background: #1F5BFF; color: #FFFFFF; text-decoration: none; padding: 15px 24px; border-radius: 999px; font-size: 16px; font-weight: 600; min-height: 52px; box-sizing: border-box">Pick a time now<span aria-hidden="true">→</span></a>
+<div data-callme-wrap hidden style="margin-top: 8px; background: #F5F5F3; border-radius: 24px; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<h2 style="margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -0.02em">Or have our AI call you now</h2>
+<form data-callme style="flex: 1 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px">
+<p hidden><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></p>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #5C5C5C">Your name<input type="text" name="name" required autocomplete="name" placeholder="Jane Smith" style="background: #FFFFFF; border: 1px solid #E4E4E1; border-radius: 12px; padding: 14px; font-size: 16px; color: #0A0A0A"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #5C5C5C">Business<input type="text" name="business" autocomplete="organization" placeholder="Smith Auto Repair" style="background: #FFFFFF; border: 1px solid #E4E4E1; border-radius: 12px; padding: 14px; font-size: 16px; color: #0A0A0A"></label>
+<label style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #5C5C5C">Phone number (Canada or US)<input type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="(604) 555-0123" style="background: #FFFFFF; border: 1px solid #E4E4E1; border-radius: 12px; padding: 14px; font-size: 16px; color: #0A0A0A"></label>
+<label style="grid-column: 1 / -1; display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 1.5; color: #3A3A3A"><input type="checkbox" name="consent" value="yes" required style="margin-top: 3px; width: 20px; height: 20px; flex: none; accent-color: #1F5BFF"><span>I agree that AIfy Solutions may call this number now with an AI voice assistant about AIfy's services, and that the call is transcribed. I can ask it to stop at any time.</span></label>
+<button type="submit" style="grid-column: 1 / -1; border: 0; cursor: pointer; background: #1F5BFF; color: #FFFFFF; padding: 16px 24px; border-radius: 999px; font-size: 16px; font-weight: 600; min-height: 52px">Call me now</button>
+<p data-callme-status role="status" aria-live="polite" style="grid-column: 1 / -1; margin: 0; font-size: 15px; color: #0A0A0A; min-height: 1.5em"></p>
+</form>
+</div>
 <div style="display: flex; flex-direction: column; gap: 6px; font-size: 16px; color: #5C5C5C; margin-top: 8px">
 <a href="mailto:info@aify.solutions" style="color: #0A0A0A">info@aify.solutions</a>
 <span>Monday to Friday, 9 AM–6 PM PT</span>
@@ -139,6 +151,7 @@ body{margin:0}
 
 </div>
 <script src="/assets/site.js" defer></script>
+<script src="/assets/callme.js" defer></script>
 <script src="/agent/agent.js" defer data-endpoint="/api/agent"></script>
 </body>
 </html>

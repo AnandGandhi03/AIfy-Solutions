@@ -187,6 +187,25 @@ body{margin:0}
 </div>
 </section>
 
+<section data-callme-wrap hidden style="max-width: 1200px; margin: 0 auto; padding: 0 24px 96px">
+<div style="background: #F5F5F3; border-radius: 28px; padding: clamp(24px, 4vw, 48px); display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-start">
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #1F5BFF">Hear it on your own phone</span>
+<h2 style="margin: 0; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.05; font-weight: 600; letter-spacing: -0.04em">Have our AI call you.</h2>
+<p style="margin: 0; font-size: 17px; line-height: 1.55; color: #5C5C5C">Leave your number and AIfy's AI assistant calls you within a minute. Ask it anything about AIfy, or have it play receptionist for your business. It can text you a link to book time with our team.</p>
+</div>
+<form data-callme style="flex: 1 1 420px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px">
+<p hidden><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></p>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #5C5C5C">Your name<input type="text" name="name" required autocomplete="name" placeholder="Jane Smith" style="background: #FFFFFF; border: 1px solid #E4E4E1; border-radius: 12px; padding: 14px; font-size: 16px; color: #0A0A0A"></label>
+<label style="display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #5C5C5C">Business<input type="text" name="business" autocomplete="organization" placeholder="Smith Auto Repair" style="background: #FFFFFF; border: 1px solid #E4E4E1; border-radius: 12px; padding: 14px; font-size: 16px; color: #0A0A0A"></label>
+<label style="grid-column: 1 / -1; display: flex; flex-direction: column; gap: 8px; font-size: 14px; color: #5C5C5C">Phone number (Canada or US)<input type="tel" name="phone" required autocomplete="tel" inputmode="tel" placeholder="(604) 555-0123" style="background: #FFFFFF; border: 1px solid #E4E4E1; border-radius: 12px; padding: 14px; font-size: 16px; color: #0A0A0A"></label>
+<label style="grid-column: 1 / -1; display: flex; gap: 12px; align-items: flex-start; font-size: 14px; line-height: 1.5; color: #3A3A3A"><input type="checkbox" name="consent" value="yes" required style="margin-top: 3px; width: 20px; height: 20px; flex: none; accent-color: #1F5BFF"><span>I agree that AIfy Solutions may call this number now with an AI voice assistant about AIfy's services, and that the call is transcribed. I can ask it to stop at any time.</span></label>
+<button type="submit" style="grid-column: 1 / -1; border: 0; cursor: pointer; background: #1F5BFF; color: #FFFFFF; padding: 16px 24px; border-radius: 999px; font-size: 16px; font-weight: 600; min-height: 52px">Call me now</button>
+<p data-callme-status role="status" aria-live="polite" style="grid-column: 1 / -1; margin: 0; font-size: 15px; color: #0A0A0A; min-height: 1.5em"></p>
+</form>
+</div>
+</section>
+
 <section id="get-this" class="aify-reveal" style="background: #0A0A0A; color: #FFFFFF">
 <div style="max-width: 1200px; margin: 0 auto; padding: 96px 24px; display: flex; flex-wrap: wrap; gap: 48px; align-items: flex-start">
 <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 20px">
@@ -259,6 +278,7 @@ body{margin:0}
 </div>
 <script src="/assets/site.js" defer></script>
 <script src="/assets/demo.js" defer></script>
+<script src="/assets/callme.js" defer></script>
 <script src="/agent/agent.js" defer data-endpoint="/api/agent"></script>
 </body>
 </html>

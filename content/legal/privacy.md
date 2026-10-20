@@ -1,11 +1,11 @@
 ---
 title: Privacy policy
 slug: privacy
-updated: October 14, 2026
-description: How AIfy Solutions collects, uses and protects personal information on aify.solutions, including our AI agent, live demo and demo phone line.
+updated: October 19, 2026
+description: How AIfy Solutions collects, uses and protects personal information, including our AI agent, live demo, demo phone line and requested AI calls.
 ---
 
-AIfy Solutions ("AIfy", "we", "us") is a company based in Surrey, British Columbia, Canada. This policy explains what personal information we collect through our website **aify.solutions**, our website assistant (AIfy Agent), our live demo and our demo phone line, why we collect it, and the choices you have. We handle personal information in line with Canada's *Personal Information Protection and Electronic Documents Act* (PIPEDA) and British Columbia's *Personal Information Protection Act* (PIPA).
+AIfy Solutions ("AIfy", "we", "us") is a company based in Surrey, British Columbia, Canada. This policy explains what personal information we collect through our website **aify.solutions**, our website assistant (AIfy Agent), our live demo, our demo phone line and the calls you request from our AI assistant, why we collect it, and the choices you have. We handle personal information in line with Canada's *Personal Information Protection and Electronic Documents Act* (PIPEDA) and British Columbia's *Personal Information Protection Act* (PIPA).
 
 ## What we collect
 
@@ -15,6 +15,7 @@ AIfy Solutions ("AIfy", "we", "us") is a company based in Surrey, British Columb
 - **AIfy Agent (website chat):** the messages you type. If you ask us to follow up, the agent collects your name, email and, optionally, phone and business name.
 - **Live demo (in your browser):** what you say or type during a demo call, so the AI can respond. If your browser converts your speech to text, that happens through your browser's own speech service before the text reaches us.
 - **Demo phone line:** when you call our demo number, we receive your phone number (caller ID), and your call is converted to text so the AI can respond. We keep a transcript of the call, the outcome, and any sample booking made. If you book during the call, we send a text message to the number you called from.
+- **"Have our AI call you":** when you ask our AI assistant to call you, we collect your name, business name and phone number, and we keep a record of your consent (the wording you agreed to, the date and time, your IP address and browser). The call is converted to text so the AI can respond; we keep the transcript, notes about your business, and the outcome. If you ask, or if we miss you, we text you a link to book a call. We only call numbers that asked for a call, and only during permitted calling hours.
 
 **Information collected automatically**
 
@@ -54,12 +55,14 @@ Because these providers are outside Canada, your information may be stored and p
 
 - **Leads** (forms, chat follow-up requests, demo phone calls): up to 24 months from our last contact with you, unless you become a client, in which case our client agreement applies.
 - **Browser demo conversations:** not stored by us.
+- **Consent records for requested calls:** kept for as long as we might rely on them, and at least 3 years.
+- **Do-not-call requests:** if you ask us not to call you, we add your number to our internal do-not-call list and keep it for at least 3 years and 14 days, as Canada's telemarketing rules require.
 - **Website chat in your browser:** until you close the tab.
 - **Technical logs:** kept by our hosting provider for a limited period for security and operations.
 
 ## Your choices and rights
 
-You can ask us to access, correct or delete the personal information we hold about you, or withdraw consent to being contacted, by emailing **info@aify.solutions**. We'll respond within 30 days. You can also unsubscribe from any follow-up email we send. If you're not satisfied with our response, you can contact the Office of the Information and Privacy Commissioner for British Columbia or the Office of the Privacy Commissioner of Canada.
+You can ask us to access, correct or delete the personal information we hold about you, or withdraw consent to being contacted, by emailing **info@aify.solutions**. On a call with our AI assistant you can also just say you don't want to be called again, and we'll add your number to our do-not-call list. We'll respond within 30 days. You can also unsubscribe from any follow-up email we send. If you're not satisfied with our response, you can contact the Office of the Information and Privacy Commissioner for British Columbia or the Office of the Privacy Commissioner of Canada.
 
 ## Security
 
