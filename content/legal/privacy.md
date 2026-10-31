@@ -12,7 +12,7 @@ AIfy Solutions ("AIfy", "we", "us") is a company based in Surrey, British Columb
 **Information you give us**
 
 - **Contact and demo request forms:** your name, email, phone number, business name, role, and anything you write in the message field.
-- **AIfy Agent (website chat):** the messages you type. If you ask us to follow up, the agent collects your name, email and, optionally, phone and business name.
+- **Ify, our website chat assistant:** the messages you type. If you ask us to follow up, the agent collects your name, email and, optionally, phone and business name.
 - **Live demo (in your browser):** what you say or type during a demo call, so the AI can respond. If your browser converts your speech to text, that happens through your browser's own speech service before the text reaches us.
 - **Demo phone line:** when you call our demo number, we receive your phone number (caller ID), and your call is converted to text so the AI can respond. We keep a transcript of the call, the outcome, and any sample booking made. If you book during the call, we send a text message to the number you called from.
 - **"Have our AI call you":** when you ask our AI assistant to call you, we collect your name, business name and phone number, and we keep a record of your consent (the wording you agreed to, the date and time, your IP address and browser). The call is converted to text so the AI can respond; we keep the transcript, notes about your business, and the outcome. If you ask, or if we miss you, we text you a link to book a call. We only call numbers that asked for a call, and only during permitted calling hours.
@@ -44,7 +44,7 @@ We use trusted providers to run our services. They process information on our be
 | Provider | Purpose | Location |
 |---|---|---|
 | Netlify | Website hosting, forms, serverless functions and data storage | United States and other regions |
-| Anthropic | AI model that powers AIfy Agent and the demo | United States |
+| Anthropic | AI model that powers Ify (website chat), our phone calls and the demo | United States |
 | Twilio | Demo phone line: calls, speech-to-text, text-to-speech and SMS | United States |
 | Resend (if enabled) | Delivering lead notifications by email to our team | United States |
 | Google | Web fonts; scheduling if you book a call through our booking page | United States and other regions |

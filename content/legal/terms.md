@@ -2,10 +2,10 @@
 title: Terms of use
 slug: terms
 updated: October 14, 2026
-description: The terms for using aify.solutions, AIfy Agent, the live demo and the demo phone line.
+description: The terms for using aify.solutions, Ify (our website assistant), the live demo and the demo phone line.
 ---
 
-These terms apply to your use of **aify.solutions** and its features, including AIfy Agent (our website assistant), the live demo and the demo phone line (together, the "Site"). The Site is operated by AIfy Solutions ("AIfy", "we", "us"), Surrey, British Columbia, Canada. By using the Site you agree to these terms. If you don't agree, please don't use it.
+These terms apply to your use of **aify.solutions** and its features, including Ify (our website assistant), the live demo and the demo phone line (together, the "Site"). The Site is operated by AIfy Solutions ("AIfy", "we", "us"), Surrey, British Columbia, Canada. By using the Site you agree to these terms. If you don't agree, please don't use it.
 
 Work we do for clients is covered by a separate written agreement, not these terms.
 
@@ -19,7 +19,7 @@ The live demo and demo phone line simulate a service desk for **Harbour Lane Mot
 
 ## AI-generated responses
 
-AIfy Agent and the demo are powered by artificial intelligence. Their responses are generated automatically and may be inaccurate, incomplete or out of date. They don't provide legal, financial, technical or other professional advice, and nothing they say is a quote, offer or commitment from AIfy. Prices, scope and timelines for our services are only binding when set out in a written proposal or agreement.
+Ify and the demo are powered by artificial intelligence. Their responses are generated automatically and may be inaccurate, incomplete or out of date. They don't provide legal, financial, technical or other professional advice, and nothing they say is a quote, offer or commitment from AIfy. Prices, scope and timelines for our services are only binding when set out in a written proposal or agreement.
 
 ## Acceptable use
 

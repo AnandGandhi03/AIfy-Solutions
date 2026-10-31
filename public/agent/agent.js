@@ -9,13 +9,14 @@
   var ENDPOINT = (script && script.getAttribute("data-endpoint")) || "/api/agent";
   var KEY = "aify-agent-v1";
   var DEMO_URL = "/demo";
-  var GREETING = "Hi, I'm AIfy Agent. Ask me anything about what we build and how it would work for your business, or I can set up a call with the team.";
+  var GREETING = "Hi, I'm Ify, AIfy's AI assistant. Ask me anything about what we build and how it would work for your business, or I can set up a call with the team.";
   var CHIPS = [
     { label: "Try the live demo", href: DEMO_URL, primary: true },
     { label: "What does AIfy build?", prompt: "What does AIfy build?" },
     { label: "How does pricing work?", prompt: "How does pricing work?" },
     { label: "Book a call", prompt: "I'd like to book a call with the team." }
   ];
+  var IFY = '<img src="/assets/ify/ify-head.webp" alt="" width="40" height="40" decoding="async">';
   var CURSOR = '<svg class="aia-cursor" viewBox="1440 -1560 420 1710" aria-hidden="true"><rect x="1580" y="-1504" width="140" height="1598" fill="#1F5BFF"/><rect x="1440" y="-1560" width="420" height="112" rx="40" fill="#1F5BFF"/><rect x="1440" y="38" width="420" height="112" rx="40" fill="#1F5BFF"/></svg>';
   var ICON = {
     close: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>',
@@ -35,18 +36,18 @@
   // ---- DOM ----
   var root = el("div", "aia");
   root.innerHTML =
-    '<button type="button" class="aia-launch" aria-label="Ask AIfy Agent" aria-haspopup="dialog" aria-expanded="false"><span class="aia-avatar">' + CURSOR + '</span><span>Ask AIfy</span><span class="aia-live" aria-hidden="true"></span></button>' +
-    '<section class="aia-panel" role="dialog" aria-modal="false" aria-label="Chat with AIfy Agent" hidden>' +
-      '<header class="aia-head"><span class="aia-avatar">' + CURSOR + '</span><span class="aia-title"><b>AIfy Agent</b><span><i aria-hidden="true"></i>AI assistant · replies instantly</span></span>' +
+    '<button type="button" class="aia-launch" aria-label="Ask Ify, AIfy\'s AI assistant" aria-haspopup="dialog" aria-expanded="false"><span class="aia-avatar">' + IFY + '</span><span>Ask Ify</span><span class="aia-live" aria-hidden="true"></span></button>' +
+    '<section class="aia-panel" role="dialog" aria-modal="false" aria-label="Chat with Ify, AIfy\'s AI assistant" hidden>' +
+      '<header class="aia-head"><span class="aia-avatar">' + IFY + '</span><span class="aia-title"><b>Ify</b><span><i aria-hidden="true"></i>AIfy\'s AI assistant</span></span>' +
         '<button type="button" class="aia-icon aia-voice" aria-pressed="false" title="Read replies aloud" aria-label="Read replies aloud">' + ICON.speaker + '</button>' +
         '<button type="button" class="aia-icon aia-reset" title="Start over" aria-label="Start a new conversation">' + ICON.reset + '</button>' +
         '<button type="button" class="aia-icon aia-close" title="Close" aria-label="Close chat">' + ICON.close + '</button></header>' +
       '<div class="aia-log" role="log" aria-live="polite" aria-relevant="additions"></div>' +
-      '<form class="aia-foot"><div class="aia-compose"><label class="aia-sr" for="aia-input">Message AIfy</label>' +
-        '<textarea id="aia-input" rows="1" maxlength="1200" placeholder="Ask about AIfy…" autocomplete="off"></textarea>' +
+      '<form class="aia-foot"><div class="aia-compose"><label class="aia-sr" for="aia-input">Message Ify</label>' +
+        '<textarea id="aia-input" rows="1" maxlength="1200" placeholder="Ask Ify anything…" autocomplete="off"></textarea>' +
         '<button type="button" class="aia-icon aia-mic" title="Speak" aria-label="Speak your message" hidden>' + ICON.mic + '</button>' +
         '<button type="submit" class="aia-send" aria-label="Send" disabled>' + ICON.send + '</button></div>' +
-        '<p class="aia-note">AIfy Agent is an AI assistant. Please don\'t share sensitive information.</p></form>' +
+        '<p class="aia-note">Ify is an AI assistant. Please don\'t share sensitive information.</p></form>' +
     '</section>';
   var $ = function (s) { return root.querySelector(s); };
   var launch = $(".aia-launch"), panel = $(".aia-panel"), log = $(".aia-log"), form = $(".aia-foot"), input = $("textarea"), sendBtn = $(".aia-send"), micBtn = $(".aia-mic"), voiceBtn = $(".aia-voice");

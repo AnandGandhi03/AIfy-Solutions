@@ -69,5 +69,5 @@ export default async (req) => {
     await saveLead({ name, business, phone, source: "Call-me request (call failed to start)" }, { kind: "callme", subject: `Call request needs a callback: ${name}` });
     return json({ error: "We couldn't start the call just now. Our team will call you back shortly." }, 502, cors);
   }
-  return json({ ok: true, calling: true, message: `Calling you now from ${prettyNumber(from)}. Pick up and say hi.` }, 200, cors);
+  return json({ ok: true, calling: true, message: `Ify is calling you now from ${prettyNumber(from)}. Pick up and say hi.` }, 200, cors);
 };
