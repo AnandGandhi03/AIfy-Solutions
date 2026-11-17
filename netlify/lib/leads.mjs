@@ -15,6 +15,9 @@ export async function saveLead(lead, { subject, kind = "lead" } = {}) {
   } catch (e) { console.warn("lead store failed", e); }
 
   const jobs = [];
+  // Also file every lead as a Netlify Forms entry ("ify-lead", registered in public/__forms.html),
+  // so Netlify's form notifications can email the team. The visitor never fills a form.
+  if (process.env.NETLIFY || process.env.PUBLIC_BASE_URL) jobs.push(fileFormEntry(record));
   if (process.env.LEAD_WEBHOOK_URL) {
     jobs.push(fetch(process.env.LEAD_WEBHOOK_URL, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(record) }));
   }
@@ -36,4 +39,17 @@ export async function saveLead(lead, { subject, kind = "lead" } = {}) {
   const sent = results.some((r) => r.status === "fulfilled" && r.value.ok);
   if (jobs.length && !sent) console.error("lead delivery failed", results.map((r) => r.status === "fulfilled" ? r.value.status : String(r.reason)));
   return { ok: stored || sent || !jobs.length, record };
+}
+
+const FORM_FIELDS = ["name", "email", "phone", "business", "interest"];
+async function fileFormEntry(record) {
+  const base = (process.env.PUBLIC_BASE_URL || process.env.URL || "").replace(/\/$/, "");
+  if (!base) throw new Error("no site URL for form entry");
+  const kinds = { "chat-lead": "Ify website chat", "demo-request": "Dealership demo form", callme: "Call-me request", "visibility-check": "AI visibility check", "demo-call": "Demo line call", "sales-call": "AI sales call" };
+  const body = new URLSearchParams({ "form-name": "ify-lead", type: kinds[record.kind] || record.kind || "lead" });
+  for (const k of FORM_FIELDS) if (record[k]) body.set(k, String(record[k]));
+  const rest = Object.entries(record).filter(([k]) => !FORM_FIELDS.includes(k) && k !== "kind");
+  body.set("details", rest.map(([k, v]) => `${k}: ${typeof v === "object" ? JSON.stringify(v) : v}`).join("\n").slice(0, 6000));
+  const r = await fetch(`${base}/__forms.html`, { method: "POST", headers: { "content-type": "application/x-www-form-urlencoded" }, body, redirect: "manual" });
+  return { ok: r.status >= 200 && r.status < 400, status: r.status };
 }
