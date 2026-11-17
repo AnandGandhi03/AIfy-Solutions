@@ -9,6 +9,8 @@
 - [Free AI visibility check: does AI recommend your business?](https://aify.solutions/ai-visibility): Free GEO / AEO check: see whether AI assistants with live web search name your business when customers ask, who they recommend instead, and what to fix.
 - [AI voice agent for dealership service](https://aify.solutions/dealerships): Every service call, answered. AIfy books into your schedule, handles "is my car ready?" and brings back customers who are due. Try the live demo.
 - [Solutions](https://aify.solutions/solutions): AI chatbot and receptionist, workflow automation, GEO, website development, AI analytics and local SEO, built around your business.
+- [Use cases](https://aify.solutions/use-cases): 25 jobs AIfy builds and runs, grouped by outcome and filterable by business type: after-hours call answering, missed-call text back, no-show rebooking, review requests, a Monday numbers email and more.
+- [Trust](https://aify.solutions/trust): Plain answers about what AIfy does with customer information, and the service providers it uses.
 - [How we work](https://aify.solutions/how-we-work): From first call to live in weeks: discovery, a fixed-price proposal, build and test, then launch and improve.
 - [About](https://aify.solutions/about): AIfy Solutions is a product-led team in Surrey, BC that designs and builds AI around how businesses actually run.
 - [Book a demo](https://aify.solutions/contact): Book a 15-minute call and hear a live demo built around your business.
